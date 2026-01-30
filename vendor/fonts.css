@@ -1,0 +1,17 @@
+
+
+@font-face {
+    font-family: "RedHatRegular";
+    src: url(./fonts/RedHatText-Regular.ttf), format("truetype");
+}
+
+@font-face {
+    font-family: "RedHatSemiBold";
+    src: url(./fonts/RedHatText-SemiBold.ttf), format("truetype");
+}
+
+@font-face {
+    font-family: "RedHatBold";
+    src: url(./fonts/RedHatText-Bold.ttf), format("truetype");
+}
+

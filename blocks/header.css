@@ -1,0 +1,13 @@
+
+
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.header__title {
+    font-family: "RedHatBold", sans-serif;
+    font-size: 32px;
+    color: hsl(14, 65%, 9%);
+}
