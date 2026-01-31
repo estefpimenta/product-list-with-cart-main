@@ -1,0 +1,29 @@
+
+
+.cart-container {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(20, 50%, 98%);
+}
+
+.cart-title{
+    font-size: 24px;
+    font-family: "RedHatBold", sans-serif;
+    color: hsl(14, 86%, 42%);
+    text-align: left;
+}
+
+.cart-image {
+    width: 100%;
+    margin-top: 40px;
+
+}
+
+.cart-description {
+    font-size: 16px;
+    font-family: "RedHatRegular", sans-serif;
+    color: hsl(220, 14%, 75%);
+    text-align: center;
+    margin-top: 16px;
+}

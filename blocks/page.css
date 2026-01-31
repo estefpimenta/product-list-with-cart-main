@@ -11,7 +11,7 @@ body {
   background-color: hsl(13, 31%, 94%);
 
   display: flex; 
-  position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  flex-direction: column;
+  padding: 20px;
+
 }

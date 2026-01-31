@@ -4,86 +4,11 @@ main {
     margin: 0 auto;  
     
     display:flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
 
     background-color: hsl(13, 31%, 94%);
 }
 
 
-.products-container {
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.product-line {
-    display: flex;
-    gap: 20px;
-    justify-content: left;
-}
-
-.product-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 12px;
-
-}
-
-.product-card-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.product-image {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.product-button {
-    padding: 10px 20px;
-    background-color: hsl(20, 50%, 98%);
-    color: hsl(14, 65%, 9%);
-    border: 1px solid hsl(12, 20%, 44%);
-    border-radius: 32px;
-    cursor: pointer;
-    margin-top: -20px;
-    font-family: "RedHatSemiBold", sans-serif;
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.product-card-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.product-category {
-    font-family: "RedHatMedium", sans-serif;
-    font-size: 14px;
-    color: hsl(12, 20%, 44%);
-}
-
-.product-name {
-    font-family: "RedHatBold", sans-serif;
-    font-size: 16px;
-    color: hsl(14, 65%, 9%);
-}
-
-.product-price {
-    font-family: "RedHatBold", sans-serif;
-    font-size: 18px;
-    color: hsl(14, 37%, 53%);
-}
