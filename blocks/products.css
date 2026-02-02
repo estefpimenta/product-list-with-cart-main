@@ -30,11 +30,16 @@
 
 }
 
+
 .product-image {
     width: 250px;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
+}
+
+.product-image:hover {
+    border: 2px solid hsl(14, 37%, 53%);
 }
 
 .product-button {
@@ -78,3 +83,41 @@
     font-size: 18px;
     color: hsl(14, 37%, 53%);
 }
+
+
+/* ADD TO CART */
+
+.button-addCart {
+    
+
+    padding: 10px 20px;
+    background-color: hsl(14, 37%, 53%);
+    color: hsl(20, 50%, 98%);
+    border: 1px solid hsl(12, 20%, 44%);
+    border-radius: 32px;
+    cursor: pointer;
+    margin-top: -20px;
+    font-family: "RedHatSemiBold", sans-serif;
+
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-top: -42px;
+
+
+    /* display: none; */
+}
+
+.button-counter-image {
+    
+    width: 24px;
+    height: 24px;
+
+    border: 1px solid hsl(20, 50%, 98%);
+    border-radius: 50%;
+    padding: 6px;
+    
+    box-sizing: border-box;
+    
+}
+
