@@ -119,6 +119,20 @@
     justify-content: space-between;
 }
 
+.cart-total-label {
+    font-family: "RedHatMedium", sans-serif;
+    font-size: 14px;
+}
+
+.cart-total-price {
+
+    font-family: "RedHatBold", sans-serif;
+    font-size: 18px;
+    color: hsl(14, 65%, 9%)
+}
+
+
+
 
 .carbon-neutral-container {
 
@@ -128,8 +142,15 @@
     margin-top: 16px;
     margin-bottom: 16px;
     background-color: hsl(13, 31%, 94%);
+    
+    font-family: "RedHatMedium", sans-serif;
+    font-size: 14px;
 }
 
+.carbon-neutral-span {
+    font-family: "RedHatBold", sans-serif;
+
+}
 
 .confirm-order-button {
 
