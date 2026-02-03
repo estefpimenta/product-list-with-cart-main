@@ -132,8 +132,6 @@
 }
 
 
-
-
 .carbon-neutral-container {
 
     display: flex;
@@ -142,6 +140,8 @@
     margin-top: 16px;
     margin-bottom: 16px;
     background-color: hsl(13, 31%, 94%);
+    padding: 8px 12px;
+    border-radius: 8px;
     
     font-family: "RedHatMedium", sans-serif;
     font-size: 14px;
