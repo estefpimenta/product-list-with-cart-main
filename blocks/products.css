@@ -95,6 +95,7 @@
     color: hsl(20, 50%, 98%);
     border: 1px solid hsl(12, 20%, 44%);
     border-radius: 32px;
+    border: none;
     cursor: pointer;
     margin-top: -20px;
     font-family: "RedHatSemiBold", sans-serif;
@@ -102,10 +103,10 @@
     display: flex;
     align-items: center;
     gap: 26px;
-    margin-top: -42px;
+    margin-top: -20px;
 
 
-    /* display: none; */
+    display: none;
 }
 
 .button-counter-decrement,
@@ -132,4 +133,12 @@ background-image: url('../assets/images/icon-decrement-quantity.svg');
 
 .button-counter-increment {
 background-image: url('../assets/images/icon-increment-quantity.svg');
+}
+
+.active-state {
+    display: flex;
+}
+
+.deactive-state {
+    display: none;
 }
