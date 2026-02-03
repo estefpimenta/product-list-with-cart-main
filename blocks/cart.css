@@ -1,10 +1,12 @@
 
+/* CART EMPTY STRUCUTURE */
 
 .cart-container {
     max-width: 350px;
     display: flex;
     flex-direction: column;
     background-color: hsl(20, 50%, 98%);
+    border-radius: 8px;
 }
 
 .cart-title{
@@ -27,3 +29,78 @@
     text-align: center;
     margin-top: 16px;
 }
+
+/* CART POPULATED */
+
+/* .cart-list {
+    
+
+
+
+
+
+    display: none;
+    
+} */
+
+.cart-list-item {
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+    padding: 8px;
+
+    list-style: none;
+}
+
+.cart-item-name {
+    font-family: "RedHatBold", sans-serif;
+    font-size: 18px;
+    color: hsl(14, 65%, 9%);
+}
+
+.cart-details-removeBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+
+.cart-item-details {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;   
+    align-items: center;
+}
+
+.cart-item-quantity {
+    font-family: "RedHatBold", sans-serif;
+    font-size: 16px;
+    color: hsl(14, 37%, 53%);
+}
+
+.cart-item-price {
+    font-family: "RedHatMedium", sans-serif;
+    font-size: 18px;
+    color: hsl(12, 20%, 44%);
+}
+
+.cart-item-total {
+    font-family: "RedHatMedium", sans-serif;
+    font-size: 18px;
+    color: hsl(13, 25%, 45%);
+}
+
+.cart-item-remove {
+    background-image: url(../assets/images/icon-remove-item.svg);
+
+    width: 24px;
+    height: 24px;
+
+    border: 1px solid hsl(12, 20%, 44%);
+    border-radius: 50%;
+    
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+    cursor: pointer;
+}
+
