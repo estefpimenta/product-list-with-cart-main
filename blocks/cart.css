@@ -32,16 +32,15 @@
 
 /* CART POPULATED */
 
-/* .cart-list {
+.cart-list {
     
-
-
-
-
-
     display: none;
     
-} */
+}
+
+.cart-active-state {
+    display: block;
+}
 
 .cart-list-item {
     border-bottom: 1px solid hsl(220, 14%, 75%);
