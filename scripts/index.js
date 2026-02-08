@@ -63,12 +63,7 @@ productCard.forEach( card => {
 
 })
 
-
-// productButtons.forEach( productButton => {
-
-//     productButton.addEventListener("click", () => {
    
-//     
 // })
 
 
