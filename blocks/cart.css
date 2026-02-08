@@ -7,6 +7,8 @@
     flex-direction: column;
     background-color: hsl(20, 50%, 98%);
     border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cart-title{
@@ -18,7 +20,7 @@
 
 .cart-empty-image {
     width: 100%;
-    margin-top: 40px;
+    margin: 40px auto;
 
 }
 
@@ -27,7 +29,7 @@
     font-family: "RedHatRegular", sans-serif;
     color: hsl(220, 14%, 75%);
     text-align: center;
-    margin-top: 16px;
+    margin: 16px 0;
 }
 
 /* CART POPULATED */
@@ -144,6 +146,8 @@
     
     font-family: "RedHatMedium", sans-serif;
     font-size: 14px;
+
+    display: none;
 }
 
 .carbon-neutral-span {
@@ -161,5 +165,7 @@
     border: none;
     cursor: pointer;
     font-family: "RedHatSemiBold", sans-serif;
+
+    display: none;
 
 }
