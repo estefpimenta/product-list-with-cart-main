@@ -138,7 +138,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 16px;
+    margin-top: 24px;
     margin-bottom: 16px;
     background-color: hsl(13, 31%, 94%);
     padding: 8px 12px;
@@ -148,6 +148,7 @@
     font-size: 14px;
 
     display: none;
+    
 }
 
 .carbon-neutral-span {
@@ -168,4 +169,14 @@
 
     display: none;
 
+}
+
+
+.carbon-neutral-container-active-state {
+    display: flex;
+}
+
+
+.confirm-order-button-active-state {
+    display: block;
 }

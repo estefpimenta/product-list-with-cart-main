@@ -54,6 +54,13 @@ productCard.forEach( card => {
             const productButtons = card.querySelector(".product-button");
             productButtons.classList.add("deactive-state");
 
+            const carbonNeutralConteiner = document.querySelector(".carbon-neutral-container");
+            carbonNeutralConteiner.classList.add("carbon-neutral-container-active-state");
+
+            const confirmOrderButton = document.querySelector(".confirm-order-button");
+            confirmOrderButton.classList.add("confirm-order-button-active-state");
+
+
             updateCart();
             
         }
