@@ -15,7 +15,7 @@ products.forEach(product => {
 })
 
 
-// BUTTON COUNTER LOGIC
+
 
 
 // VARIABLES
@@ -26,6 +26,7 @@ const buttonDecrement = document.querySelector(".button-counter-decrement");
 const buttonIncrement = document.querySelector(".button-counter-increment");
 const productQuantity = document.querySelector(".button-counter");
 const productCard = document.querySelectorAll(".product-card");
+
 
 // EVENT LISTENERS
 
@@ -54,11 +55,7 @@ productCard.forEach( card => {
             const productButtons = card.querySelector(".product-button");
             productButtons.classList.add("deactive-state");
 
-            const carbonNeutralConteiner = document.querySelector(".carbon-neutral-container");
-            carbonNeutralConteiner.classList.add("carbon-neutral-container-active-state");
-
-            const confirmOrderButton = document.querySelector(".confirm-order-button");
-            confirmOrderButton.classList.add("confirm-order-button-active-state");
+            
 
 
             updateCart();
@@ -107,13 +104,9 @@ const cartTitleQuantity = document.querySelector(".cart-title-quantity");
 const cartEmptyImage = document.querySelector(".cart-empty-image");
 const cartEmptyMessage = document.querySelector(".cart-empty-description");
 const cartList = document.querySelector(".cart-list");
-
-
-
 const cartItemTemplate = document.querySelector("#cart-item-template");
-
-
-
+const carbonNeutralConteiner = document.querySelector(".carbon-neutral-container");
+const confirmOrderButton = document.querySelector(".confirm-order-button");
 
 
 
@@ -122,8 +115,11 @@ function updateCart() {
     cartEmptyImage.classList.add("deactive-state");
     cartEmptyMessage.classList.add("deactive-state");
     cartList.classList.add("cart-active-state");
-
+    carbonNeutralConteiner.classList.add("carbon-neutral-container-active-state");
+    confirmOrderButton.classList.add("confirm-order-button-active-state");
+    
     cartList.replaceChildren()
+
 
     cartItens.forEach(item => {
 
@@ -131,6 +127,7 @@ function updateCart() {
         const cartItemName = cartItem.querySelector(".cart-item-name");
         const cartItemQuantity = cartItem.querySelector(".cart-item-quantity");
         const cartItemPrice = cartItem.querySelector(".cart-item-price");
+        const removeButton = cartItem.querySelector(".cart-item-remove-button");
         
         
         
@@ -141,12 +138,60 @@ function updateCart() {
         
 
         
+        removeButton.addEventListener("click", () => {
+        removeFromCart(item.id);
+        });
+
         cartList.prepend(cartItem);
         
 
 
     })
 
+    // REMOVE FROM CART LOGIC
+    
 
+    function removeFromCart(id) {
+
+        const index = cartItens.findIndex(item => item.id === id);
+
+        if (index !== -1) {
+            cartItens.splice(index, 1);
+        }
+
+        toggleProductButtons(id);
+        updateCart();
+    }
+
+
+    function toggleProductButtons(id) {
+
+        const card = document.querySelector(`.product-card[data-id="${id}"]`);
+        if (!card) return;
+
+        const buttonAddToCart = card.querySelector(".button-addCart");
+        const productButton = card.querySelector(".product-button");
+
+        buttonAddToCart.classList.remove("active-state");
+        productButton.classList.remove("deactive-state");
+        }
 
 }
+
+
+//  REMOVE FROM CART LOGIC
+
+
+
+
+
+    
+
+
+
+// BUTTON COUNTER LOGIC
+
+
+
+
+
