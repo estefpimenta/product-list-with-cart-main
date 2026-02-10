@@ -99,6 +99,48 @@ const carbonNeutralConteiner = document.querySelector(
   ".carbon-neutral-container",
 );
 const confirmOrderButton = document.querySelector(".confirm-order-button");
+const cartTotalPriceElement = document.querySelector(".cart-total-price");
+const cartCheckoutContainer = document.querySelector(".cart-checkout-container");
+
+
+
+function updateCartTitleQuantity() {
+  const totalItems = cartItens.reduce((acc, item) => {
+    return acc + item.quantity;
+  }, 0);
+
+  cartTitleQuantity.textContent = totalItems;
+}
+
+
+
+function toggleCartTotalVisibility() {
+  if (cartItens.length > 0) {
+    cartCheckoutContainer.style.display = "block";
+  } else {
+    cartCheckoutContainer.style.display = "none";
+  }
+}
+
+
+
+function updateCartTotalPrice() {
+  const total = cartItens.reduce((acc, item) => {
+    const product = products.find(
+      (product) => product.id == item.id
+    );
+
+    return acc + product.price * item.quantity;
+  }, 0);
+
+  cartTotalPriceElement.textContent = `$ ${total.toFixed(2)}`;
+}
+
+
+
+
+
+
 
 function updateCart() {
   cartEmptyImage.classList.add("deactive-state");
@@ -151,6 +193,12 @@ function updateCart() {
     buttonAddToCart.classList.remove("active-state");
     productButton.classList.remove("deactive-state");
   }
+
+
+  updateCartTotalPrice();
+  updateCartTitleQuantity();
+  toggleCartTotalVisibility();
+  
 }
 
 // BUTTON COUNTER LOGIC
