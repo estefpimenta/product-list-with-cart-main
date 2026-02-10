@@ -1,115 +1,97 @@
 # Frontend Mentor - Product list with cart solution
 
-This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+Este projeto é uma solução para o desafio **Product list with cart** do  
+[Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d).
 
-## Table of contents
+O foco foi desenvolver uma aplicação **interativa**, com controle de estado do carrinho, atualização dinâmica de preços e experiência de usuário próxima de um e-commerce real.
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+---
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## 📸 Preview
 
-## Overview
+<img src="./preview.jpg" alt="Preview do projeto">
 
-### The challenge
+---
 
-Users should be able to:
+## 🎯 Objetivo do Projeto
 
-- Add items to the cart and remove them
-- Increase/decrease the number of items in the cart
-- See an order confirmation modal when they click "Confirm Order"
-- Reset their selections when they click "Start New Order"
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+Reproduzir o layout proposto pelo Frontend Mentor e implementar toda a **lógica de carrinho de compras**, incluindo:
 
-### Screenshot
+- Adição e remoção de produtos
+- Controle de quantidade
+- Cálculo automático do total
+- Atualização dinâmica da interface
+- Modal de confirmação de pedido
 
-![](./screenshot.jpg)
+---
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+## 🛠️ Tecnologias Utilizadas
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+- **HTML5**
+- **CSS3**
+  - Flexbox
+  - Media Queries
+- **JavaScript (Vanilla JS)**
+- **Metodologia BEM**
+- **Template HTML (`<template>`)**
+- **Fetch API** (carregamento de dados via JSON)
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+---
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+## 🧠 O que eu aprendi
 
-### Links
+### ✔️ JavaScript & Lógica de Estado
+- Manipulação de arrays e objetos para controle do carrinho.
+- Uso de `find`, `findIndex`, `reduce` e `forEach`.
+- Atualização de interface baseada no estado da aplicação.
+- Separação clara entre **lógica** e **renderização**.
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+### ✔️ Carrinho de Compras
+- Incremento e decremento de quantidade por produto.
+- Remoção individual de itens do carrinho.
+- Cálculo automático do valor total.
+- Atualização dinâmica do contador “Your Cart (X)”.
 
-## My process
+### ✔️ Manipulação do DOM
+- Uso de `querySelector`, `classList` e `dataset`.
+- Renderização dinâmica de itens usando `<template>`.
+- Controle de visibilidade via classes (`active-state` / `deactive-state`).
 
-### Built with
+### ✔️ Modal & Experiência do Usuário
+- Modal de confirmação de pedido.
+- Overlay com sombreamento do fundo.
+- Fechamento do modal via tecla **ESC**.
+- Reset completo da aplicação ao fechar o modal.
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+### ✔️ Metodologia BEM
+- Organização clara e escalável das classes CSS.
+- Separação entre blocos, elementos e modificadores.
+- CSS mais legível e fácil de manter.
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### ✔️ Responsividade
+- Layout adaptado para diferentes tamanhos de tela.
+- Componentes flexíveis e bem distribuídos.
 
-### What I learned
+---
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+## 📚 Possíveis Melhorias Futuras
 
-To see how you can add code snippets, see below:
+- Adicionar animações de transição (CSS ou JS).
+- Implementar persistência do carrinho com **LocalStorage**.
+- Criar versão em **React**, com componentes reutilizáveis.
+- Melhorar acessibilidade (ARIA, foco de teclado).
+- Refatorar a lógica usando padrão MVC ou similares.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+---
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+## 🔗 Links
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- 🔗 **Desafio no Frontend Mentor**  
+  https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d
 
-### Continued development
+- 💻 **Repositório**  
+  _(adicione aqui o link do GitHub se quiser)_
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+---
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
