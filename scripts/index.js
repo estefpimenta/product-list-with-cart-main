@@ -221,3 +221,5 @@ confirmationCloseButton.addEventListener("click", () => {
 
   location.reload();
 });
+
+
