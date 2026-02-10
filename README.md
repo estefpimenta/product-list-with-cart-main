@@ -1,7 +1,6 @@
 # Frontend Mentor - Product list with cart solution
 
-Este projeto é uma solução para o desafio **Product list with cart** do  
-[Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d).
+Este projeto é uma solução para o desafio **Product list with cart** do [Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d).
 
 O foco foi desenvolver uma aplicação **interativa**, com controle de estado do carrinho, atualização dinâmica de preços e experiência de usuário próxima de um e-commerce real.
 
@@ -30,11 +29,10 @@ Reproduzir o layout proposto pelo Frontend Mentor e implementar toda a **lógica
 - **HTML5**
 - **CSS3**
   - Flexbox
-  - Media Queries
-- **JavaScript (Vanilla JS)**
+- **JavaScript**
 - **Metodologia BEM**
 - **Template HTML (`<template>`)**
-- **Fetch API** (carregamento de dados via JSON)
+- **carregamento de dados via JSON**
 
 ---
 
@@ -42,15 +40,14 @@ Reproduzir o layout proposto pelo Frontend Mentor e implementar toda a **lógica
 
 ### ✔️ JavaScript & Lógica de Estado
 - Manipulação de arrays e objetos para controle do carrinho.
-- Uso de `find`, `findIndex`, `reduce` e `forEach`.
 - Atualização de interface baseada no estado da aplicação.
-- Separação clara entre **lógica** e **renderização**.
+- Separação entre **lógica** e **renderização**.
 
 ### ✔️ Carrinho de Compras
 - Incremento e decremento de quantidade por produto.
 - Remoção individual de itens do carrinho.
 - Cálculo automático do valor total.
-- Atualização dinâmica do contador “Your Cart (X)”.
+
 
 ### ✔️ Manipulação do DOM
 - Uso de `querySelector`, `classList` e `dataset`.
@@ -60,7 +57,6 @@ Reproduzir o layout proposto pelo Frontend Mentor e implementar toda a **lógica
 ### ✔️ Modal & Experiência do Usuário
 - Modal de confirmação de pedido.
 - Overlay com sombreamento do fundo.
-- Fechamento do modal via tecla **ESC**.
 - Reset completo da aplicação ao fechar o modal.
 
 ### ✔️ Metodologia BEM
@@ -68,18 +64,15 @@ Reproduzir o layout proposto pelo Frontend Mentor e implementar toda a **lógica
 - Separação entre blocos, elementos e modificadores.
 - CSS mais legível e fácil de manter.
 
-### ✔️ Responsividade
-- Layout adaptado para diferentes tamanhos de tela.
-- Componentes flexíveis e bem distribuídos.
-
 ---
 
 ## 📚 Possíveis Melhorias Futuras
 
 - Adicionar animações de transição (CSS ou JS).
-- Implementar persistência do carrinho com **LocalStorage**.
+- Implementar persistência do carrinho.
 - Criar versão em **React**, com componentes reutilizáveis.
-- Melhorar acessibilidade (ARIA, foco de teclado).
+- Responsividade
+- Feature de adicionar novos produtos
 - Refatorar a lógica usando padrão MVC ou similares.
 
 ---
