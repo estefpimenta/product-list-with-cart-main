@@ -1,101 +1,91 @@
-
 // IMPORT LOGIC
 
-
 async function getProducts() {
-    const response = await fetch('./data.json');
-    return await response.json();
+  const response = await fetch("./data.json");
+  return await response.json();
 }
 
-const products = await  getProducts();
+const products = await getProducts();
 console.log(products);
 
-products.forEach(product => {
-    console.log(product.id);
-})
-
-
-
-
+products.forEach((product) => {
+  console.log(product.id);
+});
 
 // VARIABLES
 
 const cartItens = [];
 
-const buttonDecrement = document.querySelector(".button-counter-decrement");
-const buttonIncrement = document.querySelector(".button-counter-increment");
-const productQuantity = document.querySelector(".button-counter");
 const productCard = document.querySelectorAll(".product-card");
-
 
 // EVENT LISTENERS
 
+productCard.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    const currentProduct = event.target;
 
-productCard.forEach( card => { 
+    if (currentProduct.classList.contains("product-button")) {
+      cartItens.push({
+        id: card.dataset.id,
+        quantity: 1,
+      });
+      console.log(cartItens);
 
-    card.addEventListener("click", (event) => {
-        
-        
-        
-        const currentProduct = event.target
-        if(currentProduct.classList.contains("product-button")) {
-            
-            cartItens.push({
-            id: card.dataset.id,
-            quantity: 1 
-            });
-            console.log(cartItens);
+      console.log(currentProduct);
 
+      const buttonAddToCart = card.querySelector(".button-addCart");
+      buttonAddToCart.classList.add("active-state");
 
-            console.log(currentProduct);
-            
-            const buttonAddToCart = card.querySelector(".button-addCart");
-            buttonAddToCart.classList.add("active-state");
+      const productButtons = card.querySelector(".product-button");
+      productButtons.classList.add("deactive-state");
 
-            const productButtons = card.querySelector(".product-button");
-            productButtons.classList.add("deactive-state");
+      const buttonDecrement = card.querySelector(".button-counter-decrement");
+      const buttonIncrement = card.querySelector(".button-counter-increment");
+      const productQuantity = card.querySelector(".button-counter");
 
-            
-
-
-            updateCart();
-            
-        }
-         
-
-    })
-
-})
-
-   
-// })
-
-
-// })
-
-
-
-
-
-
-buttonIncrement.addEventListener("click", () => {
-
-    let quantity = parseInt(productQuantity.textContent);
-    quantity += 1;
-    productQuantity.textContent = quantity;
-
-})
-
-
-buttonDecrement.addEventListener("click", () => {
-
-    let quantity = parseInt(productQuantity.textContent);
-    if (quantity > 0) {
-        quantity -= 1;
+      buttonIncrement.addEventListener("click", () => {
+        let quantity = parseInt(productQuantity.textContent);
+        quantity += 1;
         productQuantity.textContent = quantity;
-    }
-})
 
+        const itemInCart = cartItens.find(
+          (item) => item.id === card.dataset.id,
+        );
+
+        if (itemInCart) {
+          itemInCart.quantity = quantity;
+        }
+
+        updateCart();
+      });
+
+      buttonDecrement.addEventListener("click", () => {
+        let quantity = parseInt(productQuantity.textContent);
+        if (quantity > 0) {
+          quantity -= 1;
+          productQuantity.textContent = quantity;
+        }
+
+
+        const itemInCart = cartItens.find(
+          (item) => item.id === card.dataset.id,
+        );
+
+        if (itemInCart) {
+          itemInCart.quantity = quantity;
+        }
+
+        updateCart();
+      });
+
+      updateCart();
+    }
+  });
+});
+
+// })
+
+// })
 
 // BUTTON ADD TO CART LOGIC
 
@@ -105,93 +95,62 @@ const cartEmptyImage = document.querySelector(".cart-empty-image");
 const cartEmptyMessage = document.querySelector(".cart-empty-description");
 const cartList = document.querySelector(".cart-list");
 const cartItemTemplate = document.querySelector("#cart-item-template");
-const carbonNeutralConteiner = document.querySelector(".carbon-neutral-container");
+const carbonNeutralConteiner = document.querySelector(
+  ".carbon-neutral-container",
+);
 const confirmOrderButton = document.querySelector(".confirm-order-button");
 
-
-
 function updateCart() {
+  cartEmptyImage.classList.add("deactive-state");
+  cartEmptyMessage.classList.add("deactive-state");
+  cartList.classList.add("cart-active-state");
+  carbonNeutralConteiner.classList.add("carbon-neutral-container-active-state");
+  confirmOrderButton.classList.add("confirm-order-button-active-state");
 
-    cartEmptyImage.classList.add("deactive-state");
-    cartEmptyMessage.classList.add("deactive-state");
-    cartList.classList.add("cart-active-state");
-    carbonNeutralConteiner.classList.add("carbon-neutral-container-active-state");
-    confirmOrderButton.classList.add("confirm-order-button-active-state");
-    
-    cartList.replaceChildren()
+  cartList.replaceChildren();
 
+  cartItens.forEach((item) => {
+    const cartItem = cartItemTemplate.content.cloneNode(true);
+    const cartItemName = cartItem.querySelector(".cart-item-name");
+    const cartItemQuantity = cartItem.querySelector(".cart-item-quantity");
+    const cartItemPrice = cartItem.querySelector(".cart-item-price");
+    const removeButton = cartItem.querySelector(".cart-item-remove-button");
 
-    cartItens.forEach(item => {
+    const productData = products.find((product) => product.id == item.id);
+    cartItemName.textContent = productData.name;
+    cartItemPrice.textContent = `$ ${productData.price}`;
+    cartItemQuantity.textContent = item.quantity;
 
-        const cartItem = cartItemTemplate.content.cloneNode(true);
-        const cartItemName = cartItem.querySelector(".cart-item-name");
-        const cartItemQuantity = cartItem.querySelector(".cart-item-quantity");
-        const cartItemPrice = cartItem.querySelector(".cart-item-price");
-        const removeButton = cartItem.querySelector(".cart-item-remove-button");
-        
-        
-        
-        const productData = products.find(product => product.id == item.id);
-        cartItemName.textContent = productData.name;
-        cartItemPrice.textContent = `$ ${productData.price}`
-        cartItemQuantity.textContent = item.quantity
-        
+    removeButton.addEventListener("click", () => {
+      removeFromCart(item.id);
+    });
 
-        
-        removeButton.addEventListener("click", () => {
-        removeFromCart(item.id);
-        });
+    cartList.prepend(cartItem);
+  });
 
-        cartList.prepend(cartItem);
-        
+  // REMOVE FROM CART LOGIC
 
+  function removeFromCart(id) {
+    const index = cartItens.findIndex((item) => item.id === id);
 
-    })
-
-    // REMOVE FROM CART LOGIC
-    
-
-    function removeFromCart(id) {
-
-        const index = cartItens.findIndex(item => item.id === id);
-
-        if (index !== -1) {
-            cartItens.splice(index, 1);
-        }
-
-        toggleProductButtons(id);
-        updateCart();
+    if (index !== -1) {
+      cartItens.splice(index, 1);
     }
 
+    toggleProductButtons(id);
+    updateCart();
+  }
 
-    function toggleProductButtons(id) {
+  function toggleProductButtons(id) {
+    const card = document.querySelector(`.product-card[data-id="${id}"]`);
+    if (!card) return;
 
-        const card = document.querySelector(`.product-card[data-id="${id}"]`);
-        if (!card) return;
+    const buttonAddToCart = card.querySelector(".button-addCart");
+    const productButton = card.querySelector(".product-button");
 
-        const buttonAddToCart = card.querySelector(".button-addCart");
-        const productButton = card.querySelector(".product-button");
-
-        buttonAddToCart.classList.remove("active-state");
-        productButton.classList.remove("deactive-state");
-        }
-
+    buttonAddToCart.classList.remove("active-state");
+    productButton.classList.remove("deactive-state");
+  }
 }
 
-
-//  REMOVE FROM CART LOGIC
-
-
-
-
-
-    
-
-
-
 // BUTTON COUNTER LOGIC
-
-
-
-
-
