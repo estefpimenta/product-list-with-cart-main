@@ -82,8 +82,8 @@ Reproduzir o layout proposto pelo Frontend Mentor e implementar toda a **lógica
 - 🔗 **Desafio no Frontend Mentor**  
   https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d
 
-- 💻 **Repositório**  
-  _(adicione aqui o link do GitHub se quiser)_
+- 💻 **Site**  
+  https://estefpimenta.github.io/product-list-with-cart-main/
 
 ---
 
