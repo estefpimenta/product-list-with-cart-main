@@ -201,4 +201,23 @@ function updateCart() {
   
 }
 
-// BUTTON COUNTER LOGIC
+//  CONFIRM ORDER LOGIC
+
+
+const confirmOrderButtonElement = document.querySelector(".confirm-order-button");
+const confirmationContainer = document.querySelector(".confirmation-container");
+const modalOverlay = document.querySelector(".modal-overlay");
+const confirmationCloseButton = confirmationContainer.querySelector(".confirmation-close-button");
+
+confirmOrderButtonElement.addEventListener("click", () => {
+  
+  confirmationContainer.classList.add("confirmation-active-state");
+  modalOverlay.classList.add("modal-overlay-active");
+});
+
+confirmationCloseButton.addEventListener("click", () => {
+  confirmationContainer.classList.remove("confirmation-active-state");
+  modalOverlay.classList.remove("modal-overlay-active");
+
+  location.reload();
+});
